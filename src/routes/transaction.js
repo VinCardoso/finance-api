@@ -15,7 +15,7 @@ router.post('/new', verify, async (req, res) => {
       accountId: req.body.accountId,
       value: req.body.value,
       date: req.body.date,
-      description: req.body.value,
+      description: req.body.description,
       categoryId: req.body.categoryId
   });
   try {
@@ -27,7 +27,7 @@ router.post('/new', verify, async (req, res) => {
 });
 
 // Lista all Transactions
-router.get('/list', async (req, res)=> {
+router.get('/list',verify , async (req, res)=> {
   try {
     const transactions = await Transaction.find();
     res.json(transactions);

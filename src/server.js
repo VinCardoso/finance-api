@@ -30,7 +30,5 @@ app.use('/api/user', authRoute);
 app.use('/api/transaction', transactionRoute);
 app.use('/api/account', accountRoute);
 
-
-
-// 
+// Server Up
 app.listen(3000, () => console.log('ServerUP!'));
