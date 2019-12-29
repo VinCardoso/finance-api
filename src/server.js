@@ -5,7 +5,8 @@ const mongoose = require('mongoose');
 
 // Import Router
 const authRoute = require('./routes/auth');
-const transactionsRoute = require('./routes/transactions');
+const transactionRoute = require('./routes/transaction');
+const accountRoute = require('./routes/account');
 
 // Setup DotEnv
 dotenv.config();
@@ -22,7 +23,8 @@ app.use(express.json());
 
 // Route Meddlewares
 app.use('/api/user', authRoute);
-app.use('/api/transactions', transactionsRoute);
+app.use('/api/transaction', transactionRoute);
+app.use('/api/account', accountRoute);
 
 // 
 app.listen(3000, () => console.log('ServerUP!'));
