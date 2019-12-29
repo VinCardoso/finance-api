@@ -27,7 +27,7 @@ router.post('/new', verify, async (req, res) => {
 });
 
 // Lista all Transactions
-router.get('/list', verify, async (req, res)=> {
+router.get('/list', async (req, res)=> {
   try {
     const transactions = await Transaction.find();
     res.json(transactions);

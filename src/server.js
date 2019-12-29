@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // Import Router
 const authRoute = require('./routes/auth');
@@ -10,6 +11,9 @@ const accountRoute = require('./routes/account');
 
 // Setup DotEnv
 dotenv.config();
+
+// Enable Cors
+app.use(cors());
 
 // Connect to MongoDB
 mongoose.connect(
@@ -25,6 +29,8 @@ app.use(express.json());
 app.use('/api/user', authRoute);
 app.use('/api/transaction', transactionRoute);
 app.use('/api/account', accountRoute);
+
+
 
 // 
 app.listen(3000, () => console.log('ServerUP!'));
